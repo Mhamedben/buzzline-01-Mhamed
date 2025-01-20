@@ -19,6 +19,7 @@ from dotenv import load_dotenv
 # Import functions from local modules
 from utils.utils_logger import logger
 
+
 #####################################
 # Load Environment Variables
 #####################################

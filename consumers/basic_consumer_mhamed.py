@@ -1,9 +1,3 @@
-"""
-basic_consumer_case.py
-
-Read a log file as it is being written. 
-"""
-
 #####################################
 # Import Modules
 #####################################
@@ -21,8 +15,7 @@ from utils.utils_logger import logger, get_log_file_path
 
 #####################################
 # Define a function to process a single message
-# #####################################
-
+#####################################
 
 def process_message(log_file) -> None:
     """
@@ -60,11 +53,21 @@ def process_message(log_file) -> None:
                 print(f"ALERT: The special message was found! \n{message}")
                 logger.warning(f"ALERT: The special message was found! \n{message}")
 
+            # Implement additional analytics here
+            # Example of detecting error messages
+            if "ERROR" in message:
+                print(f"ERROR ALERT: An error was logged: \n{message}")
+                logger.error(f"ERROR ALERT: An error was logged: \n{message}")
+
+            # Example of detecting warning messages
+            if "WARNING" in message:
+                print(f"WARNING ALERT: A warning was logged: \n{message}")
+                logger.warning(f"WARNING ALERT: A warning was logged: \n{message}")
+
 
 #####################################
 # Define main function for this script.
 #####################################
-
 
 def main() -> None:
     """Main entry point."""
